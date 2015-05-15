@@ -1284,6 +1284,7 @@ void board_init_r (gd_t *id, ulong dest_addr)
 				}	
 				break;
 		}
+
 		printf( "============================================ \n" );
 		printf( "U-Boot_mt7620 Version: %s\n", WEB_FAILSAFE_VERSION );
 		printf( "-------------------------------------------- \n" );
@@ -1413,11 +1414,11 @@ void board_init_r (gd_t *id, ulong dest_addr)
 
 		// LED ON and wait 0.2s
 		LEDON();
-		udelay( 200000 );
+		udelay( 500000 );
 
 		// LED OFF and wait 0.8s
 		LEDOFF();
-		udelay( 800000 );
+		udelay( 500000 );
 
 		counter++;
 
@@ -1432,8 +1433,13 @@ void board_init_r (gd_t *id, ulong dest_addr)
 			break;
 		}
 	}
-
-	LEDOFF();
+/* Blinking the LEDs, added by Sheen, May 1st 2015 */
+	show_boot_progress(1);
+	show_boot_progress(1);
+	show_boot_progress(1);
+	show_boot_progress(1);
+	show_boot_progress(1);
+	LEDON();
 
 	if ( counter > 0 ) {
 

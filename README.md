@@ -13,8 +13,8 @@ Building
 --------
 
 	$ git clone git@github.com:agustim/u-boot_wrtnode.git
-	$ export CONFIG_CROSS_COMPILER_PATH=/opt/buildroot-gcc342/bin  # necessary if not in /opt
-	$ export PATH=/opt/buildroot-gcc342/bin:$PATH # necessary if not in /opt
+	$ export CONFIG_CROSS_COMPILER_PATH=/opt/buildroot-gcc342/bin 
+	$ export PATH=/opt/buildroot-gcc342/bin:$PATH 
 	$ cp wrtnode_config .config
 	$ make menuconfig # Exit and save 
 	$ make

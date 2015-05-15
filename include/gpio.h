@@ -6,8 +6,8 @@
 #define RST_BTN		1
 #define WPS_BTN		2
 //#define PWR_LED	GND
-#define WIFI_2G_LED	72
-#define WAN_LED		44
+#define WIFI_2G_LED	44
+#define WAN_LED		38
 
 enum gpio_reg_id {
 	GPIO_INT = 0,

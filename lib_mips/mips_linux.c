@@ -291,3 +291,22 @@ static void linux_env_set (char *env_name, char *env_val)
 		linux_env[++linux_env_idx] = 0;
 	}
 }
+/* Blinking the LEDs, added by Sheen, May 1st 2015 */
+void show_boot_progress( int status)
+{
+        switch(status) {
+        case 1:
+                LEDON();
+		udelay( 500000 );
+		LEDOFF();
+		udelay( 500000 );
+                break;
+        default:
+		LEDON();
+		udelay( 500000 );
+		LEDOFF();
+		udelay( 500000 );
+		break;
+        }
+}
+
